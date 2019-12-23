@@ -1,0 +1,18 @@
+mat-toolbar {
+  #app-name {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .active {
+    border-bottom: 3px solid #fcfcfc;
+    border-radius: 0;
+    height: 63px;
+  }
+}
+mat-sidenav-content {
+  min-height: calc(100vh - 133px);
+
+  #main-container {
+    padding: 25px;
+  }
+}

@@ -1,0 +1,40 @@
+<mat-toolbar fxLayout="row" color="primary">
+  <div id="app-name" fxFlex="nogrow">
+    پروفایل دانش آموزی
+  </div>
+  <div fxFlex="grow" fxLayout="row" fxLayoutAlign="center">
+    <button
+      fxFlex="nogrow"
+      mat-button
+      routerLink="/scorepage"
+      routerLinkActive="active"
+    >
+      لیست نمرات
+    </button>
+    <button
+      fxFlex="nogrow"
+      mat-button
+      routerLink="/editpage"
+      routerLinkActive="active"
+    >
+      ویرایش اطلاعات
+    </button>
+    <button
+      fxFlex="nogrow"
+      mat-button
+      routerLink="/insertpage"
+      routerLinkActive="active"
+    >
+      اضافه کردن نمرات
+    </button>
+  </div>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav mode="side"></mat-sidenav>
+  <mat-sidenav-content>
+    <div id="main-container">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

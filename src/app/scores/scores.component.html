@@ -1,0 +1,69 @@
+<div fxLayout="row wrap" fxLayoutAlign="center">
+  <div fxFlex="0 1 1000px" fxLayout="column" fxLayoutGap="25px">
+    <h4 class="header" fxFlex>
+      صفحه لیست نمرات
+    </h4>
+    <mat-card fxFlex>
+      <mat-card-content>
+        <table mat-table [dataSource]="dataSource" flex-align="center">
+          <ng-container matColumnDef="FirstName">
+            <th mat-header-cell *matHeaderCellDef>
+              FirstName
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.FirstName }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="LastName">
+            <th mat-header-cell *matHeaderCellDef>
+              LastName
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.LastName }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="course">
+            <th mat-header-cell *matHeaderCellDef>
+              course
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.course }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="scores">
+            <th mat-header-cell *matHeaderCellDef>
+              scores
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.scores }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="TestDate">
+            <th mat-header-cell *matHeaderCellDef>
+              TestDate
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.TestDate }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="StudentID">
+            <th mat-header-cell *matHeaderCellDef>
+              StudentID
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.StudentID }}
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
