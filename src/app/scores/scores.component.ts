@@ -1,64 +1,41 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSnackBar } from '@angular/material';
-import { scores } from '../../app/interface/scores';
-import { scoresResponse } from '../../app/mocks/scoresResponse.mock-data';
+import { IScores } from '../../app/interface/scores';
 import { ScoresServie } from '../services/scores.service';
+import { scoresResponse } from '../mocks/scoresResponse.mock-data';
+/*export interface scores {
+  FirstName: string;
+  LastName: string;
+  course: string;
+  scores: string;
+  TestDate: string;
+  StudentID: string;
+}*/
+
+const ELEMENT_DATA: IScores[] = [
+  { FirstName: 'خشایار', LastName: 'پنبه ئیان', course: 'ریاضی 1', scores: '17',  TestDate: '2019/11/06' , StudentID: '1', status: 0 },
+  {FirstName: 'امیر', LastName: 'احمدی', course: 'ریاضی 2', scores: '12',  TestDate: '2019/11/12' , StudentID: '2', status: 1},
+  {FirstName: 'مهدی', LastName: 'جابری', course: 'دیفرانسیل', scores: '11',  TestDate: '2019/11/09' , StudentID: '3', status: 1},
+  {FirstName: 'علی',  LastName: 'طاهری', course: 'برنامه نویسی', scores: '19',  TestDate: '2019/11/11' , StudentID: '4', status: 1},
+  {FirstName: 'پریسا', LastName: 'اسکندری', course: 'فیزیک', scores: '10',  TestDate: '2019/11/12' , StudentID: '5', status: 0},
+ ];
+
+const elements: IScores[] = scoresResponse;
 
 @Component({
-	selector: 'app-scores',
-	templateUrl: './scores.component.html',
-	styleUrls: [ './scores.component.scss' ]
+  selector: 'app-scores',
+  templateUrl: './scores.component.html',
+  styleUrls: ['./scores.component.scss']
 })
 export class ScoresComponent implements OnInit {
-	constructor(private snackbar: MatSnackBar, private scoreService: ScoresServie) {
-		this.displayedColumns = [ 'FirstName', 'LastName', 'course', 'scores', 'TestDate', 'StudentID' ];
-	}
-	dataSource = new MatTableDataSource();
-	displayedColumns: string[];
 
-	ELEMENT_DATA: scores[] = [
-		{
-			FirstName: 'خشایار',
-			LastName: 'پنبه ئیان',
-			course: 'ساختمان داده',
-			scores: '20',
-			TestDate: '2019/11/12',
-			StudentID: '1'
-		},
-		{
-			FirstName: 'علی',
-			LastName: 'قمصری',
-			course: 'دیفرانسیل',
-			scores: '17',
-			TestDate: '2019/10/15',
-			StudentID: '5'
-		},
-		{
-			FirstName: 'خشایار',
-			LastName: 'پنبه ئیان',
-			course: 'ساختمان داده',
-			scores: '20',
-			TestDate: '2019/11/12',
-			StudentID: '1'
-		},
-		{
-			FirstName: 'کامران',
-			LastName: 'منظری',
-			course: ' مهندسی اینترنت',
-			scores: '16',
-			TestDate: '2019/09/13',
-			StudentID: '2'
-		},
-		{
-			FirstName: 'همایون',
-			LastName: 'اسدی',
-			course: 'ریاضی',
-			scores: '18',
-			TestDate: '2019/10/11',
-			StudentID: '6'
-		}
-	];
+  displayedColumns: string[] = ['FirstName', 'LastName', 'course', 'scores', 'TestDate', 'StudentID'];
+  dataSource = ELEMENT_DATA ;
+  ScoresList : number[] = [0, 1];
+  constructor(private snackbar: MatSnackBar) { }
 
-	ngOnInit() {}
-}
+  ngOnInit() {
+
+    }
+  }

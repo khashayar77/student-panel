@@ -1,6 +1,6 @@
-import { IScores } from '../interface/scores';
+import { IEdit } from '../interface/edit';
 
-export const scoresResponse: IScores [] = [
+export const EditResponse: IEdit [] = [
   {
     FirstName: 'خشایار',
     LastName: 'پنبه ئیان',

@@ -1,4 +1,4 @@
-export interface IScores {
+export interface IEdit {
 	FirstName: string;
 	LastName: string;
 	course: string;

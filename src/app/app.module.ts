@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MatNativeDateModule, MatSliderModule, DateAdapter } from '@angular/material';
 import {
 	MatIconModule,
@@ -26,10 +28,11 @@ import {
 	MatRadioModule,
 	MatTooltipModule,
 	MatSnackBarModule,
-	MatTabsModule
+  MatTabsModule,
 } from '@angular/material';
 
 import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
+
 
 /**
  * components
@@ -47,7 +50,14 @@ import { scoresResponse } from '../app/mocks/scoresResponse.mock-data';
 
 /**
  * interface */
-import { scores } from '../app/interface/scores';
+import { IScores
+} from '../app/interface/scores';
+import { ScoresServiceMockInterceptore } from './mock-interceptors/scoresService-mock-interceptor';
+
+
+export function HttpLoaderFactory(http: HttpClient) {
+	return new TranslateHttpLoader(http, './assets/i18n/', 'fa.json');
+}
 
 @NgModule({
 	declarations: [
@@ -87,9 +97,22 @@ import { scores } from '../app/interface/scores';
 		HttpClientModule,
 		MatDatepickerModule,
 		MatSliderModule,
-		MatNativeDateModule
+    MatNativeDateModule, TranslateModule,
+
+    TranslateModule.forRoot({
+			loader: {
+				provide: TranslateLoader,
+				useFactory: HttpLoaderFactory,
+				deps: [ HttpClient ]
+			}
+		}),
+
+
+
 	],
-	providers: [],
+	providers: [
+    ScoresServiceMockInterceptore
+  ],
 	bootstrap: [ AppComponent ]
 })
 export class AppModule {}
