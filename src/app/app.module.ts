@@ -53,6 +53,8 @@ import { scoresResponse } from '../app/mocks/scoresResponse.mock-data';
 import { IScores
 } from '../app/interface/scores';
 import { ScoresServiceMockInterceptore } from './mock-interceptors/scoresService-mock-interceptor';
+import { ScoresPipe } from './pipes/scores.pipe';
+import { EditPipe } from './pipes/edit.pipe';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -66,7 +68,9 @@ export function HttpLoaderFactory(http: HttpClient) {
 		EditComponent,
 		InsertComponent,
 		ToolbarComponent,
-		ErrorpageComponent
+    ErrorpageComponent,
+    ScoresPipe,
+    EditPipe
 	],
 	// tslint:disable-next-line: max-line-length
 	imports: [

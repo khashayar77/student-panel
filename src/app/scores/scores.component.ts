@@ -30,7 +30,7 @@ const elements: IScores[] = scoresResponse;
 })
 export class ScoresComponent implements OnInit {
 
-  displayedColumns: string[] = ['FirstName', 'LastName', 'course', 'scores', 'TestDate', 'StudentID'];
+  displayedColumns: string[] = ['FirstName', 'LastName', 'course', 'scores', 'TestDate', 'StudentID', 'status'];
   dataSource = ELEMENT_DATA ;
   ScoresList : number[] = [0, 1];
   constructor(private snackbar: MatSnackBar) { }

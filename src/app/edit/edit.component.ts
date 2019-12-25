@@ -7,11 +7,11 @@ import { IEdit } from '../../app/interface/edit';
 
 
 const ELEMENT_DATA: IEdit[] = [
-  { FirstName: 'خشایار', LastName: 'پنبه ئیان', course: 'ریاضی 1', scores: '17',  TestDate: '2019/11/06' , StudentID: '1', status: 0 },
-  {FirstName: 'امیر', LastName: 'احمدی', course: 'ریاضی 2', scores: '12',  TestDate: '2019/11/12' , StudentID: '2', status: 1},
-  {FirstName: 'مهدی', LastName: 'جابری', course: 'دیفرانسیل', scores: '11',  TestDate: '2019/11/09' , StudentID: '3', status: 1},
-  {FirstName: 'علی',  LastName: 'طاهری', course: 'برنامه نویسی', scores: '19',  TestDate: '2019/11/11' , StudentID: '4', status: 1},
-  {FirstName: 'پریسا', LastName: 'اسکندری', course: 'فیزیک', scores: '10',  TestDate: '2019/11/12' , StudentID: '5', status: 0},
+  { FirstName: 'خشایار', LastName: 'پنبه ئیان', course: 'ریاضی 1', scores: '17',  TestDate: '2019/11/06' , StudentID: '1', status: true },
+  {FirstName: 'امیر', LastName: 'احمدی', course: 'ریاضی 2', scores: '12',  TestDate: '2019/11/12' , StudentID: '2', status: true},
+  {FirstName: 'مهدی', LastName: 'جابری', course: 'دیفرانسیل', scores: '11',  TestDate: '2019/11/09' , StudentID: '3', status: true},
+  {FirstName: 'علی',  LastName: 'طاهری', course: 'برنامه نویسی', scores: '19',  TestDate: '2019/11/11' , StudentID: '4', status: true},
+  {FirstName: 'پریسا', LastName: 'اسکندری', course: 'فیزیک', scores: '10',  TestDate: '2019/11/12' , StudentID: '5', status: false},
  ];
 
 const elements: IEdit[] = EditResponse;
@@ -28,6 +28,13 @@ export class EditComponent implements OnInit {
   constructor(private snackbar: MatSnackBar) { }
 
   ngOnInit() {
+  }
+
+  EditFile() {
+    ELEMENT_DATA.forEach(element => {
+      element.status = false;
+
+    });
   }
 
   // openbuttomSheet(): any

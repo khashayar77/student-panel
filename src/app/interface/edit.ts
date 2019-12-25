@@ -5,5 +5,5 @@ export interface IEdit {
 	scores: string;
 	TestDate: string;
   StudentID: string;
-  status: number;
+  status: boolean;
 }
