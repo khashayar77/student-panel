@@ -8,7 +8,7 @@ export const EditResponse: IEdit [] = [
     scores: '20',
     TestDate: '2019/11/12',
     StudentID: '1',
-    status: 0
+    status: false
   },
   {
     FirstName: 'کامران',
@@ -17,7 +17,7 @@ export const EditResponse: IEdit [] = [
     scores: '16',
     TestDate: '2019/09/13',
     StudentID: '2',
-    status: 1
+    status: false
   },
   {
     FirstName: 'خشایار',
@@ -26,7 +26,7 @@ export const EditResponse: IEdit [] = [
     scores: '20',
     TestDate: '2019/11/12',
     StudentID: '1',
-    status: 0
+    status: false
   },
   {
     FirstName: 'علی',
@@ -35,7 +35,7 @@ export const EditResponse: IEdit [] = [
     scores: '20',
     TestDate: '2019/11/14',
     StudentID: '4',
-    status: 0
+    status: false
   },
   {
     FirstName: 'علی',
@@ -44,7 +44,7 @@ export const EditResponse: IEdit [] = [
     scores: '17',
     TestDate: '2019/10/15',
     StudentID: '5',
-    status: 1
+    status: false
   },
   {
     FirstName: 'همایون',
@@ -53,6 +53,6 @@ export const EditResponse: IEdit [] = [
     scores: '18',
     TestDate: '2019/10/11',
     StudentID: '6',
-    status: 1
+    status: false
   }
 ];

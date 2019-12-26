@@ -34,12 +34,12 @@ export class InsertComponent implements OnInit {
         NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
         NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
 
-    return {
-      id: id.toString(),
-      name: name,
-      progress: Math.round(Math.random() * 100).toString(),
-      color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
-    };
+    // return {
+    //   // id: id.toString(),
+    //   // name,
+    //   // // progress: Math.round(Math.random() * 100).toString(),
+    //   // // color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
+    // };
   }
 
   // Adds new user.
