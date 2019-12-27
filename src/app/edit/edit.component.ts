@@ -3,7 +3,10 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatSnackBar } from '@angular/material';
 import { EditResponse } from '../mocks/editResponse.mock-data';
 import { IEdit } from '../../app/interface/edit';
-// import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+
 
 
 const ELEMENT_DATA: IEdit[] = [
@@ -21,11 +24,15 @@ const elements: IEdit[] = EditResponse;
   templateUrl: './edit.component.html',
   styleUrls: ['./edit.component.scss']
 })
+
 export class EditComponent implements OnInit {
   displayedColumns: string[] = ['FirstName', 'LastName', 'course', 'scores', 'TestDate', 'StudentID', 'status', 'Edit'];
   dataSource = ELEMENT_DATA ;
-
+  formGroup: FormGroup;
   constructor(private snackbar: MatSnackBar) { }
+
+
+
 
   ngOnInit() {
   }
@@ -37,9 +44,9 @@ export class EditComponent implements OnInit {
     });
   }
 
-  // openbuttomSheet(): any
-  // {
 
-  // }
+  openBottomSheet()
+  {
 
+  }
 }

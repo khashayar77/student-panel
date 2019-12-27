@@ -1,70 +1,47 @@
-<!-- <mat-toolbar color="primary">
-  Angular Material Table with row animation
-</mat-toolbar> -->
-
-<div></div>
-<button mat-raised-button (click)="addRow()">اضافه کردن به لیست</button><br/>
 
 
-<div class="example-container mat-elevation-z8">
+
+
+<form #f="ngForm" (ngSubmit)="addRow(f)">
+  <mat-form-field class="example-full-width">
+    <input matInput type="text" name="ScoreText" >
+  </mat-form-field>
+  <button mat-raised-button type="submit">افزودن رکورد</button>
+</form>
+
+
+<div class="example-container mat-elevation-z3">
   <mat-table #table [dataSource]="dataSource">
 
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-
-
-
-          <ng-container matColumnDef="ID">
-            <mat-header-cell *matHeaderCellDef >ID</mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.ID}} </mat-cell>
-          </ng-container>
 
 
     <!-- ID Column -->
-    <ng-container matColumnDef="FirstName">
-      <mat-header-cell *matHeaderCellDef >FirstName</mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.FirstName}} </mat-cell>
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef > ID </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
     </ng-container>
 
     <!-- Progress Column -->
-    <ng-container matColumnDef="LastName">
-      <mat-header-cell *matHeaderCellDef >LastName</mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.LastName}}</mat-cell>
+    <ng-container matColumnDef="Scores">
+      <mat-header-cell *matHeaderCellDef > Scores </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.scores}} </mat-cell>
     </ng-container>
 
     <!-- Name Column -->
-    <ng-container matColumnDef="course">
-      <mat-header-cell *matHeaderCellDef >course</mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.course}} </mat-cell>
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef > Name </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
     </ng-container>
 
     <!-- Color Column -->
-    <ng-container matColumnDef="scores">
-      <mat-header-cell *matHeaderCellDef >scores</mat-header-cell>
-      <mat-cell *matCellDef="let row" [style.color]="row.scores"> {{row.scores}} </mat-cell>
+    <ng-container matColumnDef="color">
+      <mat-header-cell *matHeaderCellDef > Status </mat-header-cell>
+      <mat-cell *matCellDef="let row" [style.status]="row.status"> {{row.status}} </mat-cell>
     </ng-container>
-
-
-    <ng-container matColumnDef="TestDate">
-      <mat-header-cell *matHeaderCellDef >TestDate</mat-header-cell>
-      <mat-cell *matCellDef="let row" [style.color]="row.TestDate"> {{row.TestDate}} </mat-cell>
-    </ng-container>
-
-
-    <ng-container matColumnDef="StudentID">
-      <mat-header-cell *matHeaderCellDef >StudentID</mat-header-cell>
-      <mat-cell *matCellDef="let row" [style.color]="row.StudentID"> {{row.StudentID}} </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="status">
-      <mat-header-cell *matHeaderCellDef >status</mat-header-cell>
-      <mat-cell *matCellDef="let row" [style.color]="row.status"> {{row.status}} </mat-cell>
-    </ng-container>
-
 
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <!-- <mat-row [@rowsAnimation]="" *matRowDef="let row; columns: displayedColumns;"></mat-row> -->
+    <mat-row [@rowsAnimation]="" *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>
 </div>
 <!--

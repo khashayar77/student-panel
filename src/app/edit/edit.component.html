@@ -1,8 +1,43 @@
+
+
+<div class="inputs" fxLayout="row" fxLayoutAlign="space-evenly center">
+
+
+  <div>
+    <mat-form-field flexLayout="row" fxLayoutAlign="center cente">
+      <input matInput [matDatepicker]="picker" placeholder="انتخاب تاریخ">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+  </div>
+
+  <div>
+<mat-form-field>
+  <mat-label>انتخاب روز</mat-label>
+  <select matNativeControl required>
+    <option value="volvo">شنبه</option>
+    <option value="saab">یکشنبه</option>
+    <option value="mercedes">دوشنبه</option>
+    <option value="audi">سه شنبه</option>
+    <option value="audi">چهارشنبه</option>
+    <option value="audi">پنجشنبه</option>
+    <option value="audi">جمعه</option>
+  </select>
+</mat-form-field>
+
+  </div>
+
+
+</div>
+
+
+
 <div fxLayout="row wrap" fxLayoutAlign="center">
   <div fxFlex="0 1 1000px" fxLayout="column" fxLayoutGap="25px">
-    <h4 class="header" fxFlex>
+    <!-- <h4 class="header" fxFlex>
       صفحه ویرایش اطلاعات
-    </h4>
+    </h4> -->
     <mat-card fxFlex>
       <mat-card-content>
         <table mat-table [dataSource]="dataSource" flex-align="center">
@@ -59,7 +94,7 @@
               {{ element.StudentID }}
             </td>
           </ng-container>
-          
+
           <ng-container matColumnDef="status">
             <th mat-header-cell *matHeaderCellDef>
               status
@@ -85,6 +120,10 @@
               <button mat-icon-button  (click)="EditFile()">
                 <mat-icon>edit</mat-icon>
               </button>
+              <button mat-icon-button (click)="openBottomSheet(element)">
+                <mat-icon>remove_red_eye</mat-icon>
+              </button>
+
             </td>
           </ng-container>
 

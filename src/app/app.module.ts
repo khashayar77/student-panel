@@ -44,6 +44,8 @@ import { EditComponent } from './edit/edit.component';
 import { InsertComponent } from './insert/insert.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { ErrorpageComponent } from './errorpage/errorpage.component';
+
+
 /**
  * mockes */
 import { scoresResponse } from '../app/mocks/scoresResponse.mock-data';
@@ -55,6 +57,7 @@ import { IScores
 import { ScoresServiceMockInterceptore } from './mock-interceptors/scoresService-mock-interceptor';
 import { ScoresPipe } from './pipes/scores.pipe';
 import { EditPipe } from './pipes/edit.pipe';
+
 
 
 export function HttpLoaderFactory(http: HttpClient) {

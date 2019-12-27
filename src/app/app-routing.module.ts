@@ -6,6 +6,8 @@ import { InsertComponent } from './insert/insert.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { ErrorpageComponent } from './errorpage/errorpage.component';
 
+
+
 const routes: Routes = [
 	{
 		path: '',
@@ -13,7 +15,7 @@ const routes: Routes = [
 		children: [
 			{ path: 'scorepage', component: ScoresComponent },
 			{ path: 'editpage', component: EditComponent },
-			{ path: 'insertpage', component: InsertComponent }
+      { path: 'insertpage', component: InsertComponent }
 		]
 	},
 	{ path: '**', component: ErrorpageComponent }
