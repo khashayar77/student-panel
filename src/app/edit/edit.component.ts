@@ -42,6 +42,8 @@ export class EditComponent implements OnInit {
       element.status = false;
 
     });
+
+ 
   }
 
 

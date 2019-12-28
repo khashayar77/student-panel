@@ -1,70 +1,60 @@
-import {Component} from '@angular/core';
-import {VERSION} from '@angular/material';
-import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
-import { scoresResponse } from '../mocks/scoresResponse.mock-data';
-import { NgForm } from '@angular/forms';
-// import { rowsAnimation } from './animations/template.animations';
+import { Component, ViewChild } from "@angular/core";
+import { MatTableDataSource, MatTable } from "@angular/material";
 
-@Component({
-  selector: 'app-insert',
-  templateUrl: './insert.component.html',
-  styleUrls: ['./insert.component.scss']
-})
-export class InsertComponent{
-  displayedColumns = ['id', 'name', 'Scores', 'color'];
-  dataSource: MatTableDataSource<UserData>;
+const Status = ["قبول", "مردود", "قبول", "مردود", "مردود", "قبول"];
 
-  constructor() {
-    // Creates random users.
-    // const users: UserData[] = [];
-    // for (let i = 1; i <= 5; i++) {
-    //   users.push(this.createNewUser(i));
-    // }
-
-    // Assign the data to the data source for the table to render.
-    //this.dataSource = new MatTableDataSource(users);
-  }
-
-  // Creates new user.
-  // createNewUser(id: number): UserData {
-  //   const name =
-  //       NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
-  //       NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
-
-  //   return {
-  //     id: id.toString(),
-  //     name: name,
-  //     scores: Math.round(Math.random()).toString(),
-  //     status: Status[Math.round(Math.random() * (Status.length - 1))]
-  //   };
-  // }
-
-  // Adds new user.
-  addRow(f: NgForm) {
-
-    let ScoreTextVar: string;
-    ScoreTextVar = f.value.ScoreText;
-
-    this.dataSource.data.push({
-      id: 1,
-      name: "naser",
-      scores: ScoreTextVar,
-      status: "مردود"
-    });
-    //this.dataSource.filter = "";
-  }
-}
-
-
-const Status = ['قبول', 'مردود', 'قبول', 'مردود', 'مردود', 'قبول'];
-
-const NAMES = ['علی', 'حسین', 'مریم', 'محمد', 'پریسا', 'پریناز',
-  'شایان', 'احمد', 'شهلا', 'ساناز', 'مهدی', 'امیر',
+const NAMES = [
+  "علی",
+  "حسین",
+  "مریم",
+  "محمد",
+  "پریسا",
+  "پریناز",
+  "شایان",
+  "احمد",
+  "شهلا",
+  "ساناز",
+  "مهدی",
+  "امیر"
 ];
 
-export interface UserData {
+const elements: UserData[] = [
+  {
+    id: 1,
+    name: "امیر",
+    scores: "12",
+    status: "قبول"
+  }
+];
+
+export class UserData {
   id: number;
   name: string;
   scores: string;
   status: string;
+}
+
+@Component({
+  selector: "app-insert",
+  templateUrl: "./insert.component.html",
+  styleUrls: ["./insert.component.scss"]
+})
+export class InsertComponent {
+  @ViewChild("table", {static:true}) table: MatTable<any>;
+
+  displayedColumns = ["id", "name", "Scores", "color"];
+  dataSource: any = elements;
+
+  constructor() {}
+
+  addRow(value: string) {
+    let item = new UserData();
+    item.id = 2;
+    item.name = "امیر";
+    item.scores = value;
+    item.status = "مردود";
+
+    elements.push(item);
+    this.table.renderRows();
+  }
 }
