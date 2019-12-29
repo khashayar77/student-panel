@@ -29,6 +29,7 @@ import {
 	MatTooltipModule,
 	MatSnackBarModule,
   MatTabsModule,
+  MatSelectModule
 } from '@angular/material';
 
 import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -104,7 +105,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 		HttpClientModule,
 		MatDatepickerModule,
 		MatSliderModule,
-    MatNativeDateModule, TranslateModule,
+    MatNativeDateModule, TranslateModule,MatSelectModule,
 
     TranslateModule.forRoot({
 			loader: {

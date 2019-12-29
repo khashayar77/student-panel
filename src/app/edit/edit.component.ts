@@ -6,6 +6,7 @@ import { IEdit } from '../../app/interface/edit';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
+import { EditPipe } from '../pipes/edit.pipe';
 
 
 
@@ -19,6 +20,7 @@ const ELEMENT_DATA: IEdit[] = [
 
 const elements: IEdit[] = EditResponse;
 
+
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
@@ -28,9 +30,9 @@ const elements: IEdit[] = EditResponse;
 export class EditComponent implements OnInit {
   displayedColumns: string[] = ['FirstName', 'LastName', 'course', 'scores', 'TestDate', 'StudentID', 'status', 'Edit'];
   dataSource = ELEMENT_DATA ;
-  formGroup: FormGroup;
+  statusList : number[] = [0, 1];
+  selected: string;
   constructor(private snackbar: MatSnackBar) { }
-
 
 
 
@@ -43,12 +45,9 @@ export class EditComponent implements OnInit {
 
     });
 
- 
-  }
-
-
-  openBottomSheet()
-  {
 
   }
+
+
+
 }

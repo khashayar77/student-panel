@@ -2,5 +2,6 @@
   "icon.enable": "thumb_up",
   "icon.disable": "thumb_down",
   "FirstName": "نام",
-  "LastName":"نام خانوادگی"
+  "LastName":"نام خانوادگی",
+  "Scores": "نمره"
 }

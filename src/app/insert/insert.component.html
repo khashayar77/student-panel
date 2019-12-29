@@ -1,7 +1,8 @@
 <mat-form-field class="example-full-width">
-  <input matInput type="text"  placeholder="نمره خود را وارد کنید" name="ScoreText" #ScoreText>
+  <input matInput type="text"   #input maxlength="2" placeholder="نمره خود را وارد کنید" name="ScoreText" #ScoreText>
+  <mat-hint align="end">{{input.value?.length || 0}}/2</mat-hint>
 </mat-form-field>
-<button mat-raised-button type="button" (click)="addRow(ScoreText.value)">افزودن نمرات</button>
+<button mat-raised-button color="warn" type="button" (click)="addRow(ScoreText.value)">افزودن نمرات</button>
 
 
 <div class="example-container mat-elevation-z3">
@@ -9,25 +10,25 @@
 
   <!-- ID Column -->
   <ng-container matColumnDef="id">
-    <mat-header-cell *matHeaderCellDef > ID </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef > کد دانش آموزی </mat-header-cell>
     <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
   </ng-container>
 
   <!-- Progress Column -->
   <ng-container matColumnDef="Scores">
-    <mat-header-cell *matHeaderCellDef > Scores </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef > درس  </mat-header-cell>
     <mat-cell *matCellDef="let row"> {{row.scores}} </mat-cell>
   </ng-container>
 
   <!-- Name Column -->
   <ng-container matColumnDef="name">
-    <mat-header-cell *matHeaderCellDef > Name </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef > نام  </mat-header-cell>
     <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
   </ng-container>
 
   <!-- Color Column -->
   <ng-container matColumnDef="color">
-    <mat-header-cell *matHeaderCellDef > Status </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef > وضعیت قبولی </mat-header-cell>
     <mat-cell *matCellDef="let row" [style.status]="row.status"> {{row.status}} </mat-cell>
   </ng-container>
 

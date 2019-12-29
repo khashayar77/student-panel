@@ -8,7 +8,7 @@
         <table mat-table [dataSource]="dataSource" flex-align="center">
           <ng-container matColumnDef="FirstName">
             <th mat-header-cell *matHeaderCellDef>
-              FirstName
+              نام
             </th>
             <td mat-cell *matCellDef="let element">
               {{ element.FirstName }}
@@ -17,7 +17,7 @@
 
           <ng-container matColumnDef="LastName">
             <th mat-header-cell *matHeaderCellDef>
-              LastName
+              نام خانوادگی
             </th>
             <td mat-cell *matCellDef="let element">
               {{ element.LastName }}
@@ -26,7 +26,7 @@
 
           <ng-container matColumnDef="course">
             <th mat-header-cell *matHeaderCellDef>
-              course
+              درس
             </th>
             <td mat-cell *matCellDef="let element">
               {{ element.course }}
@@ -35,7 +35,7 @@
 
           <ng-container matColumnDef="scores">
             <th mat-header-cell *matHeaderCellDef>
-              scores
+              نمره
             </th>
             <td mat-cell *matCellDef="let element">
               {{ element.scores }}
@@ -44,7 +44,7 @@
 
           <ng-container matColumnDef="TestDate">
             <th mat-header-cell *matHeaderCellDef>
-              TestDate
+              تاریخ امتحان
             </th>
             <td mat-cell *matCellDef="let element">
               {{ element.TestDate }}
@@ -53,7 +53,7 @@
 
           <ng-container matColumnDef="StudentID">
             <th mat-header-cell *matHeaderCellDef>
-              StudentID
+              کد دانش آموزی
             </th>
             <td mat-cell *matCellDef="let element">
               {{ element.StudentID }}
@@ -63,13 +63,13 @@
           <ng-container matColumnDef="status"
           >
             <th mat-header-cell *matHeaderCellDef>
-             status
+             وضعیت قبولی
             </th>
             <td mat-cell *matCellDef="let element">
            {{element.status | scores}}
             </td>
           </ng-container>
-          
+
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
           <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
         </table>
