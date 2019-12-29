@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatTable } from '@angular/material';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 const Status = ['قبول', 'مردود', 'قبول', 'مردود', 'مردود', 'قبول'];
 
@@ -45,7 +46,7 @@ export class InsertComponent {
   displayedColumns = ['id', 'name', 'Scores', 'color'];
   dataSource: any = elements;
 
-  constructor() {}
+  constructor(private snackbar: MatSnackBar) {}
 
   addRow(value: string) {
     let item = new UserData();

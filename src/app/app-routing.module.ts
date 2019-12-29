@@ -9,7 +9,9 @@ import { ErrorpageComponent } from './errorpage/errorpage.component';
 
 
 const routes: Routes = [
+  {path: '', redirectTo: '/scorepage', pathMatch: 'full' },
 	{
+
 		path: '',
 		component: ToolbarComponent,
 		children: [
