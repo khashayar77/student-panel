@@ -1,6 +1,4 @@
-
-
-<div class="container">
+<div class="title">
   <h4 class="header" fxFlex>
     صفحه ویرایش اطلاعات
   </h4>
@@ -54,7 +52,7 @@
         <table mat-table [dataSource]="dataSource" flex-align="center">
           <ng-container matColumnDef="FirstName">
             <th mat-header-cell *matHeaderCellDef>
-            نام
+              نام
             </th>
             <td mat-cell *matCellDef="let element">
               {{ element.FirstName }}
@@ -116,19 +114,11 @@
           </ng-container>
 
           <ng-container matColumnDef="Edit">
-            <th
-              mat-header-cell
-              *matHeaderCellDef
-
-            >
-            ویرایش همه
-          </th>
-            <td
-              mat-cell
-              *matCellDef="let element"
-
-            >
-              <button mat-icon-button  (click)="EditFile()">
+            <th mat-header-cell *matHeaderCellDef>
+              ویرایش همه
+            </th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-icon-button (click)="openBottomSheet(element)">
                 <mat-icon>edit</mat-icon>
               </button>
               <button mat-icon-button>

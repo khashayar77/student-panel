@@ -1,6 +1,6 @@
 <div class="container">
   <h4 class="header" fxFlex>
-    صفحه اضافه کردن نمرات
+    صفحه افزودن  نمرات
   </h4>
 </div>
 
@@ -8,7 +8,7 @@
   <input matInput type="text"  #input maxlength="2" placeholder="نمره خود را وارد کنید" name="ScoreText" #ScoreText>
   <mat-hint align="end">{{input.value?.length || 0}}/2</mat-hint>
 </mat-form-field>
-<button mat-raised-button color="warn" type="button" (click)="addRow(ScoreText.value)">افزودن نمرات</button>
+<button mat-raised-button color="accent" type="button" (click)="addRow(ScoreText.value)">افزودن نمرات</button>
 <div class="content"></div>
 
 
@@ -23,7 +23,7 @@
 
   <!-- Progress Column -->
   <ng-container matColumnDef="Scores">
-    <mat-header-cell *matHeaderCellDef > درس  </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef > نمره  </mat-header-cell>
     <mat-cell *matCellDef="let row"> {{row.scores}} </mat-cell>
   </ng-container>
 

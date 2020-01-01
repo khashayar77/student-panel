@@ -1,6 +1,6 @@
 import { IScores } from '../interface/scores';
 
-export const scoresResponse: IScores [] = [
+export const scoresResponse: IScores[] = [
   {
     FirstName: 'خشایار',
     LastName: 'پنبه ئیان',

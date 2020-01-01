@@ -1,0 +1,45 @@
+<div class="container" style="text-align: center;">
+    <mat-form-field class="example-full-width" style="padding: 20px;">
+        <input matInput placeholder="نام" [(ngModel)]="selectedStudent.FirstName">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" style="padding: 20px;">
+        <input matInput placeholder="نام خانوادگی" [(ngModel)]="selectedStudent.LastName">
+    </mat-form-field>
+
+    <br />
+
+    <mat-form-field class="example-full-width" style="padding: 20px;">
+        <input matInput placeholder="درس" [(ngModel)]="selectedStudent.course">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" style="padding: 20px;">
+        <input matInput placeholder="نمره" maxlength="2" [(ngModel)]="selectedStudent.scores">
+    </mat-form-field>
+
+    <br />
+
+    <mat-form-field class="example-full-width" style="padding: 20px;">
+        <input matInput placeholder="تاریخ امتحان" [(ngModel)]="selectedStudent.TestDate">
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width" style="padding: 20px;">
+
+        <!-- <input matInput placeholder="وضعیت قبولی"> -->
+        <mat-label>وضعیت قبولی</mat-label>
+        <mat-select [(ngModel)]="selectedStudent.status">
+            <mat-option [value]="true">
+                قبول
+            </mat-option>
+            <mat-option [value]="false">
+                مردود
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <div mat-dialog-actions style="text-align: center;">
+        <button mat-raised-button color="primary" (click)="closeDialog(true)" style="margin: 20px;">ذخیره</button>
+        <button mat-raised-button color="accent" (click)="closeDialog(false)" style="margin: 20px;">انصراف</button>
+    </div>
+</div>

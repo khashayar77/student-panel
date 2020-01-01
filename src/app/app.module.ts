@@ -9,7 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { MatNativeDateModule, MatSliderModule, DateAdapter } from '@angular/material';
+import { MatNativeDateModule, MatSliderModule, DateAdapter, MatBottomSheetModule, MAT_BOTTOM_SHEET_DEFAULT_OPTIONS } from '@angular/material';
 import {
 	MatIconModule,
 	MatButtonModule,
@@ -28,8 +28,8 @@ import {
 	MatRadioModule,
 	MatTooltipModule,
 	MatSnackBarModule,
-  MatTabsModule,
-  MatSelectModule
+	MatTabsModule,
+	MatSelectModule
 } from '@angular/material';
 
 import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -53,11 +53,13 @@ import { scoresResponse } from '../app/mocks/scoresResponse.mock-data';
 
 /**
  * interface */
-import { IScores
+import {
+	IScores
 } from '../app/interface/scores';
 import { ScoresServiceMockInterceptore } from './mock-interceptors/scoresService-mock-interceptor';
 import { ScoresPipe } from './pipes/scores.pipe';
 import { EditPipe } from './pipes/edit.pipe';
+import { BottomSheetOverviewExampleSheetComponent } from './bottom-sheet-overview-example-sheet/bottom-sheet-overview-example-sheet.component';
 
 
 
@@ -72,9 +74,10 @@ export function HttpLoaderFactory(http: HttpClient) {
 		EditComponent,
 		InsertComponent,
 		ToolbarComponent,
-    ErrorpageComponent,
-    ScoresPipe,
-    EditPipe
+		ErrorpageComponent,
+		ScoresPipe,
+		EditPipe,
+		BottomSheetOverviewExampleSheetComponent
 	],
 	// tslint:disable-next-line: max-line-length
 	imports: [
@@ -99,28 +102,29 @@ export function HttpLoaderFactory(http: HttpClient) {
 		MatRadioModule,
 		MatTabsModule,
 		BrowserAnimationsModule,
+		MatButtonModule,
+		MatBottomSheetModule,
 		MatTooltipModule,
 		MatSnackBarModule,
 		FlexLayoutModule,
 		HttpClientModule,
 		MatDatepickerModule,
 		MatSliderModule,
-    MatNativeDateModule, TranslateModule,MatSelectModule,
-
-    TranslateModule.forRoot({
+		MatNativeDateModule, TranslateModule, MatSelectModule,
+		TranslateModule.forRoot({
 			loader: {
 				provide: TranslateLoader,
 				useFactory: HttpLoaderFactory,
-				deps: [ HttpClient ]
+				deps: [HttpClient]
 			}
-		}),
-
-
-
-	],
+		})],
 	providers: [
-    ScoresServiceMockInterceptore
-  ],
-	bootstrap: [ AppComponent ]
+		ScoresServiceMockInterceptore,
+		{
+			provide: MAT_BOTTOM_SHEET_DEFAULT_OPTIONS, useValue: { hasBackdrop: false }
+		}
+	],
+	entryComponents: [BottomSheetOverviewExampleSheetComponent],
+	bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

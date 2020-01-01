@@ -1,6 +1,6 @@
 import { IEdit } from '../interface/edit';
 
-export const EditResponse: IEdit [] = [
+export const EditResponse: IEdit[] = [
   {
     FirstName: 'خشایار',
     LastName: 'پنبه ئیان',
