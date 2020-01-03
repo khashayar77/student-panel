@@ -15,6 +15,7 @@ export class BottomSheetOverviewExampleSheetComponent {
 
   selectedStudent: any;
 
+  // tslint:disable-next-line: max-line-length
   constructor(private _bottomSheetRef: MatBottomSheetRef<BottomSheetOverviewExampleSheetComponent>, @Inject(MAT_BOTTOM_SHEET_DATA) public data: any) {
     this.selectedStudent = {
       FirstName: data.FirstName,
@@ -34,10 +35,12 @@ export class BottomSheetOverviewExampleSheetComponent {
 
   closeDialog(saveData: boolean) {
     console.log(this.selectedStudent);
-    if (saveData)
+    if (saveData) {
       this._bottomSheetRef.dismiss(this.selectedStudent);
-    else
+    }
+    else {
       this._bottomSheetRef.dismiss();
+    }
   }
 
 }

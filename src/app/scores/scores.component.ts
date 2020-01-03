@@ -4,15 +4,6 @@ import { MatSnackBar } from '@angular/material';
 import { IScores } from '../../app/interface/scores';
 import { ScoresServie } from '../services/scores.service';
 import { scoresResponse } from '../mocks/scoresResponse.mock-data';
-/*export interface scores {
-  FirstName: string;
-  LastName: string;
-  course: string;
-  scores: string;
-  TestDate: string;
-  StudentID: string;
-}*/
-
 const ELEMENT_DATA: IScores[] = [
   { FirstName: 'خشایار', LastName: 'پنبه ئیان', course: 'ریاضی 1', scores: '17',  TestDate: '2019/11/06' , StudentID: '1', status: 0 },
   {FirstName: 'امیر', LastName: 'احمدی', course: 'ریاضی 2', scores: '12',  TestDate: '2019/11/12' , StudentID: '2', status: 1},
@@ -31,7 +22,7 @@ const elements: IScores[] = scoresResponse;
 export class ScoresComponent implements OnInit {
 
   displayedColumns: string[] = ['FirstName', 'LastName', 'course', 'scores', 'TestDate', 'StudentID', 'status'];
-  dataSource = ELEMENT_DATA ;
+  dataSource = scoresResponse ;
   ScoresList : number[] = [0, 1];
   constructor(private snackbar: MatSnackBar) { }
 

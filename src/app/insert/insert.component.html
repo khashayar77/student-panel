@@ -15,26 +15,26 @@
 <div class="example-container mat-elevation-z3">
 <mat-table #table [dataSource]="dataSource">
 
-  <!-- ID Column -->
+
   <ng-container matColumnDef="id">
     <mat-header-cell *matHeaderCellDef > کد دانش آموزی </mat-header-cell>
     <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
   </ng-container>
 
-  <!-- Progress Column -->
+
   <ng-container matColumnDef="Scores">
     <mat-header-cell *matHeaderCellDef > نمره  </mat-header-cell>
     <mat-cell *matCellDef="let row"> {{row.scores}} </mat-cell>
   </ng-container>
 
-  <!-- Name Column -->
+
   <ng-container matColumnDef="name">
     <mat-header-cell *matHeaderCellDef > نام  </mat-header-cell>
     <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
   </ng-container>
 
-  <!-- Color Column -->
-  <ng-container matColumnDef="color">
+
+  <ng-container matColumnDef="status">
     <mat-header-cell *matHeaderCellDef > وضعیت قبولی </mat-header-cell>
     <mat-cell *matCellDef="let row" [style.status]="row.status"> {{row.status}} </mat-cell>
   </ng-container>
@@ -44,9 +44,4 @@
   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 </mat-table>
 </div>
-<!--
-Copyright Google LLC All Rights Reserved.
 
-Use of this source code is governed by an MIT-style license that can be
-found in the LICENSE file at https://angular.io/license
--->

@@ -25,6 +25,18 @@ const elements: UserData[] = [
     name: 'خشایار',
     scores: '12',
     status: 'قبول',
+  },
+  {
+    id: 2,
+    name: 'امیر',
+    scores: '13',
+    status: 'قبول',
+  },
+  {
+    id: 3,
+    name: 'مریم',
+    scores: '5',
+    status: 'مردود',
   }
 ];
 
@@ -43,7 +55,7 @@ export class UserData {
 export class InsertComponent {
   @ViewChild('table', {static:true}) table: MatTable<any>;
 
-  displayedColumns = ['id', 'name', 'Scores', 'color'];
+  displayedColumns = ['id', 'name', 'Scores', 'status'];
   dataSource: any = elements;
 
   constructor(private snackbar: MatSnackBar) {}
