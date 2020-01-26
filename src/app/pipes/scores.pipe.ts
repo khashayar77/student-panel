@@ -7,7 +7,7 @@ const dictionatry = {
 
 @Pipe({ name: 'scores' })
 export class ScoresPipe implements PipeTransform {
-	transform(result: number | string): string {
+	transform(result: number): string {
 		return dictionatry[result];
 	}
 }

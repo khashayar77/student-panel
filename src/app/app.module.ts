@@ -7,9 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { MatNativeDateModule, MatSliderModule, DateAdapter, MatBottomSheetModule, MAT_BOTTOM_SHEET_DEFAULT_OPTIONS } from '@angular/material';
+import { TranslateModule } from '@ngx-translate/core';
+import { MatNativeDateModule, MatSliderModule, MatBottomSheetModule } from '@angular/material';
 import {
 	MatIconModule,
 	MatButtonModule,
@@ -32,7 +31,7 @@ import {
 	MatSelectModule
 } from '@angular/material';
 
-import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 
 /**
@@ -41,43 +40,36 @@ import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ScoresComponent } from './scores/scores.component';
-import { EditComponent } from './edit/edit.component';
-import { InsertComponent } from './insert/insert.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { ErrorpageComponent } from './errorpage/errorpage.component';
 
 
-/**
- * mockes */
-import { scoresResponse } from '../app/mocks/scoresResponse.mock-data';
 
-/**
- * interface */
-import {
-	IScores
-} from '../app/interface/scores';
-import { ScoresServiceMockInterceptore } from './mock-interceptors/scoresService-mock-interceptor';
 import { ScoresPipe } from './pipes/scores.pipe';
 import { EditPipe } from './pipes/edit.pipe';
-import { BottomSheetOverviewExampleSheetComponent } from './bottom-sheet-overview-example-sheet/bottom-sheet-overview-example-sheet.component';
+import { AddItemComponent } from './add-item/add-item.component';
+import { EditItemComponent } from './edit-item/edit-item.component';
+import { fakeBackendProvider } from './mock-interceptors/scoresService-mock-interceptor';
+import { ScoresServie } from './services/scores.service';
+import { ResultPageComponent } from './result-page/result-page.component';
 
-
+/*
 
 export function HttpLoaderFactory(http: HttpClient) {
 	return new TranslateHttpLoader(http, './assets/i18n/', 'fa.json');
-}
+}*/
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		ScoresComponent,
-		EditComponent,
-		InsertComponent,
 		ToolbarComponent,
 		ErrorpageComponent,
 		ScoresPipe,
 		EditPipe,
-		BottomSheetOverviewExampleSheetComponent
+		AddItemComponent,
+		EditItemComponent,
+		ResultPageComponent
 	],
 	// tslint:disable-next-line: max-line-length
 	imports: [
@@ -110,21 +102,11 @@ export function HttpLoaderFactory(http: HttpClient) {
 		HttpClientModule,
 		MatDatepickerModule,
 		MatSliderModule,
-		MatNativeDateModule, TranslateModule, MatSelectModule,
-		TranslateModule.forRoot({
-			loader: {
-				provide: TranslateLoader,
-				useFactory: HttpLoaderFactory,
-				deps: [HttpClient]
-			}
-		})],
+		MatNativeDateModule, TranslateModule, MatSelectModule],
 	providers: [
-		ScoresServiceMockInterceptore,
-		{
-			provide: MAT_BOTTOM_SHEET_DEFAULT_OPTIONS, useValue: { hasBackdrop: false }
-		}
+		ScoresServie,
+		fakeBackendProvider
 	],
-	entryComponents: [BottomSheetOverviewExampleSheetComponent],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

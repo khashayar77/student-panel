@@ -1,0 +1,52 @@
+<div class="container" style="text-align: center;">
+  <div fxLayout="row" fxLayoutAlign="start">
+      <h4>صفحه ویرایش اطلاعات</h4>
+  </div>
+
+  <mat-card>
+      <mat-form-field class="example-full-width" style="padding: 20px;">
+          <input matInput [(ngModel)]="score.FirstName" placeholder="نام">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" style="padding: 20px;">
+          <input matInput [(ngModel)]="score.LastName" placeholder="نام خانوادگی">
+      </mat-form-field>
+
+      <br />
+
+      <mat-form-field class="example-full-width" style="padding: 20px;">
+          <input matInput [(ngModel)]="score.course" placeholder="درس">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" style="padding: 20px;">
+          <input matInput [(ngModel)]="score.scores" placeholder="نمره" maxlength="2">
+      </mat-form-field>
+
+      <br />
+
+      <mat-form-field class="example-full-width" style="padding: 20px;">
+          <input matInput [(ngModel)]="score.TestDate" placeholder="تاریخ امتحان">
+      </mat-form-field>
+
+
+      <mat-form-field class="example-full-width" style="padding: 20px;">
+
+          <!-- <input matInput placeholder="وضعیت قبولی"> -->
+          <mat-label>وضعیت قبولی</mat-label>
+          <mat-select [(ngModel)]="score.status">
+              <mat-option [value]="0">
+                  قبول
+              </mat-option>
+              <mat-option [value]="1">
+                  مردود
+              </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+      <!-- <div mat-dialog-actions style="text-align: center;">
+          <button mat-raised-button color="primary" (click)="editItem()" style="margin: 20px;">ویرایش</button>
+          <button mat-raised-button color="accent" (click)="editCancle()" style="margin: 20px;">انصراف</button>
+      </div> -->
+  </mat-card>
+
+</div>

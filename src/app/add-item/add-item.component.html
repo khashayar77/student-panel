@@ -1,0 +1,73 @@
+<div class="container" style="text-align: center;">
+    <div fxLayout="row" fxLayoutAlign="start">
+        <h4>صفحه افزودن اطلاعات</h4>
+    </div>
+
+    <mat-card>
+        <mat-form-field class="example-full-width" style="padding: 20px;">
+            <input matInput [(ngModel)]="score.FirstName" placeholder="نام">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" style="padding: 20px;">
+            <input matInput [(ngModel)]="score.LastName" placeholder="نام خانوادگی">
+        </mat-form-field>
+
+        <br />
+
+        <mat-form-field class="example-full-width" style="padding: 20px;">
+            <input matInput [(ngModel)]="score.course" placeholder="درس">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" style="padding: 20px;">
+            <input matInput [(ngModel)]="score.scores" placeholder="نمره" maxlength="2">
+        </mat-form-field>
+
+        <br />
+
+        <!-- <mat-form-field class="example-full-width" style="padding: 20px;">
+            <input matInput [(ngModel)]="score.TestDate" placeholder="تاریخ امتحان">
+        </mat-form-field> -->
+
+
+        <mat-form-field>
+          <input matInput [matDatepicker]="dp" placeholder="انتخاب تاریخ" [formControl]="date" [(ngModel)]="score.TestDate" >
+          <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+          <mat-datepicker #dp></mat-datepicker>
+        </mat-form-field>
+
+
+
+
+        <mat-form-field class="example-full-width" style="padding: 20px;">
+
+            
+            <mat-label>وضعیت قبولی</mat-label>
+            <mat-select [(ngModel)]="score.status">
+                <mat-option [value]="0">
+                    قبول
+                </mat-option>
+                <mat-option [value]="1">
+                    مردود
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+
+
+        <div mat-dialog-actions style="text-align: center;">
+<form [formGroup]="options">
+  <div class="gender">
+    <div>
+      <label>جنسیت :</label>
+    </div><br/>
+      <mat-checkbox formControlName="hideRequired">مرد</mat-checkbox>
+      <mat-checkbox formControlName="hideRequir">زن</mat-checkbox>
+  </div>
+</form><br/><br/>
+
+            <button mat-raised-button color="primary" (click)="AddItem()">ذخیره</button>
+
+        </div>
+    </mat-card>
+
+</div>
